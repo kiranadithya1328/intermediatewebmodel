@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | DK's Badminton Club</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      background: #f4f7fc;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeIn 0.5s ease-out; }
+    
+    .navbar {
+      background: white;
+      padding: 0.8rem 1.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .circle-logo {
+      width: 40px;
+      height: 40px;
+      background: #1e4a76;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .club-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .club-name span { color: #1e4a76; }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+    }
+    .nav-links a:hover {
+      color: #1e4a76;
+      background: #e6f0f9;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #1a3a5c;
+      margin-bottom: 1.8rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+    }
+    .gallery-img {
+      background: linear-gradient(135deg, #1e4a76, #2a6a8a);
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      transition: transform 0.25s;
+    }
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+    .gallery-item p {
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: 500;
+      background: white;
+      color: #1a3a5c;
+    }
+    footer {
+      background: #1a2a3a;
+      color: #b8cddf;
+      text-align: center;
+      padding: 1.8rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 680px) {
+      .nav-container { flex-direction: column; align-items: center; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="circle-logo">DK</div>
+      <div class="club-name">DK's <span>Badminton</span> Club</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="timings.html">Timings</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container fade-in">
+  <h1>📸 Club Gallery</h1>
+  <div class="gallery-grid">
+    <div class="gallery-item"><div class="gallery-img">🏸🔥</div><p>Match Intensity</p></div>
+    <div class="gallery-item"><div class="gallery-img">🎯🏃</div><p>Training Drills</p></div>
+    <div class="gallery-item"><div class="gallery-img">🏆🥇</div><p>Tournament Winners</p></div>
+    <div class="gallery-item"><div class="gallery-img">👥🤝</div><p>Community Play</p></div>
+  </div>
+</div>
+
+<footer>
+  
+  <p>© 2026 DK's Badminton Club</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join | DK's Badminton Club</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      background: #f4f7fc;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeIn 0.5s ease-out; }
+    
+    .navbar {
+      background: white;
+      padding: 0.8rem 1.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .circle-logo {
+      width: 40px;
+      height: 40px;
+      background: #1e4a76;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .club-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .club-name span { color: #1e4a76; }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+    }
+    .nav-links a:hover {
+      color: #1e4a76;
+      background: #e6f0f9;
+    }
+    .container {
+      max-width: 650px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .form-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 1.6rem;
+      color: #1a3a5c;
+      margin-bottom: 0.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #2c3e50;
+      font-size: 0.9rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      background: white;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #1e4a76;
+      box-shadow: 0 0 0 2px rgba(30,74,118,0.2);
+    }
+    .btn-submit {
+      background: #1e4a76;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 1rem;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover {
+      background: #0f3a5a;
+    }
+    .demo-note {
+      background: #eef3fa;
+      padding: 0.6rem;
+      border-radius: 30px;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #2c5a7a;
+    }
+    footer {
+      background: #1a2a3a;
+      color: #b8cddf;
+      text-align: center;
+      padding: 1.8rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 680px) {
+      .nav-container { flex-direction: column; align-items: center; }
+      .form-card { padding: 1.5rem; }
+      h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="circle-logo">DK</div>
+      <div class="club-name">DK's <span>Badminton</span> Club</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="timings.html">Timings</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container fade-in">
+  <div class="form-card">
+    <h1>✍️ Join Our Club</h1>
+    <p style="margin-bottom: 1.2rem; font-size: 0.9rem;">Fill the form to register your interest.</p>
+    <form id="joinForm">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label>Age / Date of Birth</label>
+        <input type="text" placeholder="e.g., 24 or 15-05-1990">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="9876543210" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Preferred Batch</label>
+        <select>
+          <option>Morning (6:00 AM – 9:30 AM)</option>
+          <option>Evening (4:00 PM – 6:30 PM)</option>
+        </select>
+      </div>
+      <button type="button" class="btn-submit" id="demoBtn">Submit Request</button>
+      <div class="demo-note">⚠️ This is a demo form only. No data is saved.</div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 DK's Badminton Club</p>
+</footer>
+
+<script>
+  document.getElementById('demoBtn').addEventListener('click', function() {
+    alert('✨ Demo mode: Your request has been received!');
+  });
+</script>
+</body>
+</html>

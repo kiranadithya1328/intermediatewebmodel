@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>DK's Badminton Club | Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #f4f7fc;
+      color: #1a2a3a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section, .hero, .card {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 0.8rem 1.2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .circle-logo {
+      width: 40px;
+      height: 40px;
+      background: #1e4a76;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .club-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a2a3a;
+    }
+    .club-name span {
+      color: #1e4a76;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e4a76;
+      background: #e6f0f9;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: #1e4a76;
+      color: white;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #1e4a76;
+      border: 2px solid #1e4a76;
+    }
+
+    .btn-outline:hover {
+      background: #1e4a76;
+      color: white;
+    }
+
+    .btn:hover {
+      background: #0f3a5a;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2a5a7a 100%);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      max-width: 550px;
+      margin: 0 auto 1.5rem;
+      font-size: 1rem;
+      opacity: 0.92;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .preview-img {
+      background: #dceaf3;
+      border-radius: 16px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #2c5a7a;
+    }
+
+    .timing-badge {
+      background: #eef3fa;
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .timing-badge strong {
+      color: #1e4a76;
+      font-size: 1.1rem;
+    }
+
+    .cta-section {
+      background: #e6f0f9;
+      border-radius: 24px;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      background: #1a2a3a;
+      color: #b8cddf;
+      text-align: center;
+      padding: 1.8rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons span {
+      font-size: 1.6rem;
+      opacity: 0.8;
+      cursor: default;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 680px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .container {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <div class="circle-logo">DK</div>
+      <div class="club-name">DK's <span>Badminton</span> Club</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="timings.html">Timings</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="join.html">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h1>🏸 Smash · Rally · Repeat</h1>
+    <p>Welcome to DK's Badminton Club – Premium courts, expert coaching, and a vibrant badminton community.</p>
+    <div class="hero-buttons">
+      <a href="about.html" class="btn">Explore Club</a>
+      <a href="join.html" class="btn btn-outline">Join Now</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>About DK's Club</h2>
+      <p>Since 2015, we've been the go-to spot for badminton lovers. Professional courts, training for all ages, and a friendly atmosphere. Beginners to pros — everyone is welcome!</p>
+      <a href="about.html" style="margin-top: 0.5rem; display: inline-block; color: #1e4a76;">Learn more →</a>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2>⏰ Court Timings</h2>
+      <div class="grid-2">
+        <div class="timing-badge"><strong>🌅 Morning</strong><br>6:00 AM – 9:30 AM</div>
+        <div class="timing-badge"><strong>🌙 Evening</strong><br>4:00 PM – 6:30 PM</div>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2>📸 Glimpse of Action</h2>
+      <div class="gallery-preview">
+        <div class="preview-img">🏸 Match</div>
+        <div class="preview-img">🎯 Training</div>
+        <div class="preview-img">🏆 Tournament</div>
+      </div>
+      <div style="text-align: center; margin-top: 1rem;">
+        <a href="gallery.html" class="btn" style="padding: 0.5rem 1.2rem;">View Gallery →</a>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2>📞 Contact</h2>
+      <div class="card">
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@dksbadminton.com</p>
+        <p>📍 21, Sports Complex, Indira Nagar, New Delhi</p>
+      </div>
+    </section>
+
+    <div class="cta-section">
+      <h3 style="color: #1a3a5c;">Ready to Join?</h3>
+      <p style="margin: 0.5rem 0 1rem;">Limited slots available for both batches.</p>
+      <a href="join.html" class="btn">Join Our Club →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+
+   <p>© 2026 DK's Badminton Club | Play with passion</p>
+</footer>
+</body>
+</html>
