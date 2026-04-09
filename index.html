@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>DK's Badminton Club | Home</title>
+  <title>DK's Badminton Club | Home - Join the Smash</title>
   <style>
     * {
       margin: 0;
@@ -98,31 +98,59 @@
       background: #e6f0f9;
     }
 
-    /* Buttons */
+    /* Buttons — UPDATED: high visibility for join button */
     .btn {
       display: inline-block;
       background: #1e4a76;
       color: white;
-      font-weight: 600;
-      padding: 0.7rem 1.5rem;
+      font-weight: 700;
+      padding: 0.75rem 1.8rem;
       border-radius: 40px;
       text-decoration: none;
       transition: 0.2s;
       border: none;
       cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
+    /* STANDARD outline variant (Explore Club) */
     .btn-outline {
       background: transparent;
-      color: #1e4a76;
-      border: 2px solid #1e4a76;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      box-shadow: none;
     }
 
     .btn-outline:hover {
-      background: #1e4a76;
-      color: white;
+      background: #ffffff;
+      color: #1e4a76;
+      transform: translateY(-2px);
     }
 
+    /* NEW: Primary call to action with vibrant green/gold accents — HIGHLY VISIBLE */
+    .btn-join-now {
+      background: linear-gradient(105deg, #E68A2E 0%, #D9791E 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 8px 18px rgba(230, 138, 46, 0.4);
+      font-weight: 800;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .btn-join-now:hover {
+      background: linear-gradient(105deg, #F09B40 0%, #E68A2E 100%);
+      transform: scale(1.02) translateY(-3px);
+      box-shadow: 0 14px 24px rgba(230, 138, 46, 0.5);
+    }
+
+    .btn-join-now:active {
+      transform: scale(0.98);
+    }
+
+    /* Regular solid button hover */
     .btn:hover {
       background: #0f3a5a;
       transform: translateY(-2px);
@@ -150,9 +178,10 @@
 
     .hero-buttons {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin-top: 0.5rem;
     }
 
     /* Container */
@@ -221,6 +250,13 @@
       margin-top: 1.5rem;
     }
 
+    /* additional cta button inside join section */
+    .cta-section .btn-join-now {
+      background: linear-gradient(105deg, #E68A2E 0%, #D9791E 100%);
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
     footer {
       background: #1a2a3a;
       color: #b8cddf;
@@ -261,12 +297,25 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
       }
+      .btn-join-now {
+        padding: 0.7rem 1.6rem;
+        font-size: 1rem;
+      }
       h2 {
         font-size: 1.3rem;
       }
       .container {
         padding: 1.5rem 1rem;
       }
+      .hero-buttons {
+        gap: 0.9rem;
+      }
+    }
+
+    /* extra focus outline for accessibility */
+    .btn:focus-visible, .btn-join-now:focus-visible {
+      outline: 3px solid #FFB347;
+      outline-offset: 2px;
     }
   </style>
 </head>
@@ -295,7 +344,8 @@
     <p>Welcome to DK's Badminton Club – Premium courts, expert coaching, and a vibrant badminton community.</p>
     <div class="hero-buttons">
       <a href="about.html" class="btn">Explore Club</a>
-      <a href="join.html" class="btn btn-outline">Join Now</a>
+      <!-- JOIN NOW BUTTON: now super visible with custom class, gradient, and glow effect -->
+      <a href="join.html" class="btn btn-join-now">🔥 Join Now →</a>
     </div>
   </div>
 
@@ -303,7 +353,7 @@
     <section>
       <h2>About DK's Club</h2>
       <p>Since 2015, we've been the go-to spot for badminton lovers. Professional courts, training for all ages, and a friendly atmosphere. Beginners to pros — everyone is welcome!</p>
-      <a href="about.html" style="margin-top: 0.5rem; display: inline-block; color: #1e4a76;">Learn more →</a>
+      <a href="about.html" style="margin-top: 0.5rem; display: inline-block; color: #1e4a76; font-weight: 500;">Learn more →</a>
     </section>
 
     <section style="margin-top: 2rem;">
@@ -311,6 +361,9 @@
       <div class="grid-2">
         <div class="timing-badge"><strong>🌅 Morning</strong><br>6:00 AM – 9:30 AM</div>
         <div class="timing-badge"><strong>🌙 Evening</strong><br>4:00 PM – 6:30 PM</div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="timings.html" style="font-size: 0.9rem; color:#1e4a76;">View full schedule →</a>
       </div>
     </section>
 
@@ -332,20 +385,29 @@
         <p>📞 +91 98765 43210</p>
         <p>✉️ hello@dksbadminton.com</p>
         <p>📍 21, Sports Complex, Indira Nagar, New Delhi</p>
+        <div style="margin-top: 12px;">
+          <a href="contact.html" style="color:#1e4a76; font-weight:500;">Get directions →</a>
+        </div>
       </div>
     </section>
 
     <div class="cta-section">
       <h3 style="color: #1a3a5c;">Ready to Join?</h3>
-      <p style="margin: 0.5rem 0 1rem;">Limited slots available for both batches.</p>
-      <a href="join.html" class="btn">Join Our Club →</a>
+      <p style="margin: 0.5rem 0 1rem;">Limited slots available for both batches. Secure your spot today!</p>
+      <!-- second join button inside cta-section: also highly visible using same special style -->
+      <a href="join.html" class="btn btn-join-now" style="background: linear-gradient(105deg, #E68A2E 0%, #D9791E 100%);">Join Our Club →</a>
     </div>
   </div>
 </main>
 
 <footer>
-
-   <p>© 2026 DK's Badminton Club | Play with passion</p>
+  <div class="social-icons">
+    <span>🏸</span>
+    <span>📸</span>
+    <span>🎯</span>
+  </div>
+  <p>© 2026 DK's Badminton Club | Play with passion</p>
+  <p style="margin-top: 0.5rem; font-size: 0.75rem;">⚡ Smash your limits – join the winning squad</p>
 </footer>
 </body>
 </html>
